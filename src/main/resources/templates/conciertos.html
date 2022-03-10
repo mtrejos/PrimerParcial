@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Conciertos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Lista de conciertos</div>
+        
+        <table>
+            <th:block th:each="user : ${conciertos}">
+                <tr>
+                    <td th:text="${user.getId}"></td>
+                    <td th:text="${user.getcosto}"></td>
+                    <td th:text="${user.getfecha}"></td>
+                    <td th:text="${user.getcapcacidad}"></td>
+                    <td th:text="${user.getlugar}"></td>
+                    <td>
+                         <a th:href="@{/delete/{id}(id=$(user.getId))} ">Delete</a>
+                     </td>
+                </tr>
+            </th:block>
+        </table>
+    </body>
+</html>
